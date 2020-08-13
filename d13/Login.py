@@ -8,8 +8,8 @@ def loginCheck(u, p):
     for user in users:
         if user['name'] == u:
             check[0] = True
-        if user['password'] == p:
-            check[1] = True
+            if user['password'] == p:
+                check[1] = True
     if not check[0]:
         raise Exception("查無此帳號")
     if not check[1]:
