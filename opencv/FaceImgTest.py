@@ -1,9 +1,11 @@
 import cv2
+import os
 
 # 匯入辨識檔
 face_cascade = cv2.CascadeClassifier('./xml/haarcascade_frontalface_alt.xml')
 
-frame = cv2.imread('./image/tzuyu.jpg')
+img = '1'
+frame = cv2.imread('./image/%s.jpg' % img)
 
 # 取得灰階圖樣
 gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
@@ -25,6 +27,10 @@ for (x, y, w, h) in faces:                  # B  G  R  線的寬
 
 # 顯示影像
 cv2.imshow('OpenCV', frame)
+
+if not os.path.exists('./result'):
+    os.mkdir('./result')
+cv2.imwrite('./result/%s.jpg' % img, frame)
 
 # 按下任意鍵離開
 c = cv2.waitKey(0)

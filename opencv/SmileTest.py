@@ -46,7 +46,7 @@ while True:
     # 在嘴部四周繪製方形
     for (fx, fy, fw, fh) in faces:
         cv2.rectangle(frame, (fx, fy), (fx + fw, fy + fh), (0, 255, 0), 5)
-        cv2.putText(frame, 'Test', (fx, fy-7), 2, 1.2, (0, 255, 0), 2)
+        cv2.putText(frame, 'Test', (fx, fy - 7), 2, 1.2, (0, 255, 0), 2)
         for (sx, sy, sw, sh) in smile:
             if fx + fw > sx > fx and fy + fh > sy > fy:
                 cv2.rectangle(frame, (sx, sy), (sx+sw, sy+sh), (255, 0, 0), 5)
