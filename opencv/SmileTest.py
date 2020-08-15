@@ -6,6 +6,7 @@ smile_cascade = cv2.CascadeClassifier('./xml/haarcascade_smile.xml')
 eyes_cascade = cv2.CascadeClassifier('./xml/haarcascade_eye.xml')
 
 cap = cv2.VideoCapture(0)
+
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 

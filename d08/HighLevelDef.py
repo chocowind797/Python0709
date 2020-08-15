@@ -6,14 +6,6 @@ def minus(x, y):
     return x - y
 
 
-def times(x, y):
-    return x * y
-
-
-def by(x, y):
-    return x / y
-
-
 def calc(func, x, y=1):
     if x < 200:
         x = 200
