@@ -9,3 +9,6 @@ while True:
     ret, frame = cap.read()
     print(ret, frame)
     cv2.imshow('OpenCV', frame)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
