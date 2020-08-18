@@ -83,6 +83,7 @@ if __name__ == '__main__':
             print("辨識成功")
             for (x, y, w, h) in faces:
                 cv2.putText(frame, 'OK', (x, y - 7), 16, 1.2, (0, 255, 0), 2)
+            break
         else:
             print("辨識失敗")
             for (x, y, w, h) in faces:
