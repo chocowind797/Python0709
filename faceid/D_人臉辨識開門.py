@@ -1,6 +1,16 @@
 # 匯入所需程式庫
 import cv2
+import time
 from faceid import A_參數設定
+from firebase import firebase
+
+
+def open():
+    firebases = firebase.FirebaseApplication('https://victor0816-b5ab4.firebaseio.com/', None)
+    firebases.patch('/myhouse', {'open': 1})
+    time.sleep(1)
+    firebases.patch('/myhouse', {'open': 0})
+
 
 # 載入 Config.HAAR_FACES 指定的層疊分類器
 face_cascade = cv2.CascadeClassifier(A_參數設定.HAAR_FACES)
@@ -82,7 +92,11 @@ if __name__ == '__main__':
         if label[1] <= A_參數設定.POSITIVE_THRESHOLD:
             print("辨識成功")
             for (x, y, w, h) in faces:
+                # 繪圖
                 cv2.putText(frame, 'OK', (x, y - 7), 16, 1.2, (0, 255, 0), 2)
+            # 將開門資料送入 firebase
+            open()
+            # 跳出偵測
             break
         else:
             print("辨識失敗")
