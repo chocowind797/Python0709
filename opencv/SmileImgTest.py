@@ -7,7 +7,7 @@ faceCascade = cv2.CascadeClassifier(facePath)
 smilePath = "./xml/haarcascade_smile.xml"
 smileCascade = cv2.CascadeClassifier(smilePath)
 
-image = '3'
+image = '2'
 img = cv2.imread("./image/%s.jpg" % image)
 gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
@@ -28,9 +28,9 @@ for (x, y, w, h) in faces:
     # 對人臉進行微笑偵測
     smile = smileCascade.detectMultiScale(
         roi_gray,
-        scaleFactor= 1.16,
+        scaleFactor=1.16,
         minNeighbors=35,
-        minSize=(30, 30),
+        minSize=(10, 10),
         flags=cv2.CASCADE_SCALE_IMAGE
     )
 
