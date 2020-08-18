@@ -25,8 +25,8 @@ while True:
     print(faces)
 
     # 在臉部四周繪製方形
-    for (x, y, w, h) in faces:                  # B  G  R  線的寬
-        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 5)
+    for (x, y, w, h) in faces:  # B  G  R  線的寬
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 5)
 
     # 顯示影像
     cv2.imshow('OpenCV', frame)
