@@ -38,6 +38,9 @@ if __name__ == '__main__':
     frame_c.pack()
     frame_f.pack()
 
+    s = ttk.Style()
+    s.configure('My.TButton', font=("Arial", 12))
+
     # 攝氏
     label_c = ttk.Label(frame_c, text='攝氏', font=('Arial', 20))
 
