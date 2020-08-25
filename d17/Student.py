@@ -13,6 +13,7 @@ def menu():
     print('4.單筆查詢')
     print('5.修改紀錄')
     print('6.刪除紀錄')
+    print('7.清除紀錄')
     print('9.離開系統')
     print("===============================================")
     n = int(input("請選擇: "))
@@ -34,6 +35,7 @@ def choice(n):
         4: lambda: selectRecord(),
         5: lambda: updateRecord(),
         6: lambda: deleteRecord(),
+        7: lambda: deleteAllRecord()
     }[n]()
 
 
@@ -126,6 +128,14 @@ def deleteRecord():
     cursor.execute(sql)
     conn.commit()
     print(id, ' 紀錄刪除成功!')
+
+
+def deleteAllRecord():
+    sql = 'delete from student'
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    conn.commit()
+    print(' 紀錄清除成功!')
 
 
 if __name__ == '__main__':
