@@ -48,6 +48,7 @@ def checkZero():
     if not ans.get().__contains__(" "):
         if ans.get()[0] == '0':
             return "replace"
+        return True
     symbolList = ['+', '-', '*', '/']
     index = []
     for symbol in symbolList:
@@ -56,12 +57,13 @@ def checkZero():
     a = ans.get()[i + 1:]
 
     def m(a):
+        print(len(a))
         if len(a) == 1:
             return True
-        if a[1] == '0':
+        if a[0] == '0':
             return "replace"
-
         return True
+
     print(a)
     m(a.replace(' ', ''))
 
@@ -103,7 +105,7 @@ def m1():
         ans.set(ans.get() + "1")
         return
     elif i == 'replace':
-        ans.set(ans.get()[:len(ans.get())-1] + "1")
+        ans.set(ans.get()[:len(ans.get()) - 1] + "1")
         return
     ans.set(ans.get() + "1")
 
