@@ -1,4 +1,5 @@
 import sqlite3
+import sys
 
 
 conn = sqlite3.connect('school.db')
@@ -20,6 +21,8 @@ def menu():
         return
     else:
         choice(n)
+    print('按下 Enter 鍵繼續...', end='')
+    sys.stdin.read(1)
     menu()
 
 
@@ -56,6 +59,13 @@ def insertRecord():
 
 def selectAllRecord():
     cursor = conn.cursor()
+    cursor.execute('pragma table_info({})'.format('lotto'))
+    metainfo = cursor.fetchall()
+    names = [t[1] for t in metainfo]
+    for name in names:
+        print(name, end='\t')
+
+    print("\n===============================================")
     sql = 'select * from student'
     cursor.execute(sql)
     rows = cursor.fetchall()
