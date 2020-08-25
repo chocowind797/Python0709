@@ -56,16 +56,15 @@ def checkZero():
     i = max(index)
     a = ans.get()[i + 1:]
 
-    def m(a):
-        print(len(a))
-        if len(a) == 1:
+    def checkagain(a):
+        if len(a) == 0:
             return True
         if a[0] == '0':
             return "replace"
         return True
 
-    print(a)
-    m(a.replace(' ', ''))
+    a = a.replace(' ', '')
+    return checkagain(a)
 
 
 def m0():
@@ -112,41 +111,97 @@ def m1():
 
 def m2():
     checkEqual()
-    ans.set(ans.get() + "2")
+    i = checkZero()
+    if i is True:
+        ans.set(ans.get() + "2")
+        return
+    elif i == 'replace':
+        ans.set(ans.get()[:len(ans.get()) - 1] + "2")
+        return
+    ans.set(ans.get() + "1")
 
 
 def m3():
     checkEqual()
+    i = checkZero()
+    if i is True:
+        ans.set(ans.get() + "3")
+        return
+    elif i == 'replace':
+        ans.set(ans.get()[:len(ans.get()) - 1] + "3")
+        return
     ans.set(ans.get() + "3")
 
 
 def m4():
     checkEqual()
+    i = checkZero()
+    if i is True:
+        ans.set(ans.get() + "4")
+        return
+    elif i == 'replace':
+        ans.set(ans.get()[:len(ans.get()) - 1] + "4")
+        return
     ans.set(ans.get() + "4")
 
 
 def m5():
     checkEqual()
+    i = checkZero()
+    if i is True:
+        ans.set(ans.get() + "5")
+        return
+    elif i == 'replace':
+        ans.set(ans.get()[:len(ans.get()) - 1] + "5")
+        return
     ans.set(ans.get() + "5")
 
 
 def m6():
     checkEqual()
+    i = checkZero()
+    if i is True:
+        ans.set(ans.get() + "6")
+        return
+    elif i == 'replace':
+        ans.set(ans.get()[:len(ans.get()) - 1] + "6")
+        return
     ans.set(ans.get() + "6")
 
 
 def m7():
     checkEqual()
+    i = checkZero()
+    if i is True:
+        ans.set(ans.get() + "7")
+        return
+    elif i == 'replace':
+        ans.set(ans.get()[:len(ans.get()) - 1] + "7")
+        return
     ans.set(ans.get() + "7")
 
 
 def m8():
     checkEqual()
+    i = checkZero()
+    if i is True:
+        ans.set(ans.get() + "8")
+        return
+    elif i == 'replace':
+        ans.set(ans.get()[:len(ans.get()) - 1] + "8")
+        return
     ans.set(ans.get() + "8")
 
 
 def m9():
     checkEqual()
+    i = checkZero()
+    if i is True:
+        ans.set(ans.get() + "9")
+        return
+    elif i == 'replace':
+        ans.set(ans.get()[:len(ans.get()) - 1] + "9")
+        return
     ans.set(ans.get() + "9")
 
 
@@ -357,8 +412,9 @@ if __name__ == '__main__':
     record_combobox.grid_forget()
 
     # config
-    isShow = False
-    isEqual = False
-    isPoint = False
+    # isShow = False
+    # isEqual = False
+    # isPoint = False
+    reset()
 
     win.mainloop()
