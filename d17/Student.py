@@ -71,7 +71,7 @@ def selectRecord():
     cursor = conn.cursor()
     cursor.execute(sql)
     rows = cursor.fetchall()
-    if rows is None:
+    if len(rows) == 0:
         print("查無此人")
     for row in rows:
         for data in row:
