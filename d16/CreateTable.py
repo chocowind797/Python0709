@@ -10,9 +10,9 @@ sql = 'create table if not exists lotto(' \
       'n6 INTEGER, ' \
       'ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP)'
 
-conn = sqlite3.connect('demo.db')  # 連線至demo.db資料庫
-cursor = conn.cursor()  # 取得cursor指標(用來操作資料庫用)
-cursor.execute(sql)  #
-conn.commit()
-print("建立完成")
-conn.close()
+conn = sqlite3.connect('demo.db')  # 連線到 demo.db 資料庫
+cursor = conn.cursor()  # 取得 cursor 指標 (用來操作資料庫用)
+cursor.execute(sql)  # 下達 sql 命令
+conn.commit()  # 送達到資料庫去執行
+print('建立完成')
+conn.close()  # 關閉連線
