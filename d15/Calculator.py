@@ -210,7 +210,7 @@ def checkSymbol():
     if a == '':
         return None
     elif a[len(a) - 1] == '.':
-        ans.set(a + "0")
+        ans.set(a[:len(a)-1])
         return True
     elif not a[len(a) - 2].isdigit() and a[len(a) - 2] != '.' and a[len(a) - 2] != ' ':
         return "replace"
@@ -286,6 +286,10 @@ def equal():
         ans.set("0")
         isEqual = True
     elif not a[len(a) - 1].isdigit():
+        if a[len(a) - 1] == '.':
+            ans.set(a[:len(a)-1])
+            equal()
+            return
         msg.showerror('錯誤', '輸入函式錯誤')
     elif not a.isdigit():
         global records
