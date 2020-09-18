@@ -386,7 +386,7 @@ if __name__ == '__main__':
     # put in
 
     win.rowconfigure((0, 1, 2, 3, 4, 5), weight=1)
-    win.columnconfigure((0, 1, 2, 3), weight=5)
+    win.columnconfigure((0, 1, 2, 3), weight=1)
 
     col_count, row_count = win.grid_size()
 
