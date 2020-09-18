@@ -9,7 +9,7 @@ list = json.loads(r)  # 將 Json 字串轉成 Python 可用之物件
 # rice = dict()
 
 for data in list:
-    if data.get('品名').__contains__("台梗"):
+    if data.get('品名').__contains__("台稉"):
         # rice.setdefault(data.pop('品名'), data.get('不合格原因'))
         print(data.get('品名'), data.get('不合格原因'))
 # print(rice)
