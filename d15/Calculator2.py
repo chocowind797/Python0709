@@ -127,59 +127,19 @@ def checkSymbolEqual():
         isEqual = False
 
 
-def add():
+def symbol(symbol):
     global isPoint
-    symbol = checkSymbol()
-    if symbol is None:
-        print("none")
+    check = checkSymbol()
+    if check is None:
         ans.set("")
     elif symbol == 'replace':
         print("replace")
-        ans.set(ans.get()[:len(ans.get()) - 3] + " + ")
+        ans.set(ans.get()[:len(ans.get()) - 3] + symbol)
     else:
-        ans.set(ans.get() + " + ")
+        ans.set(ans.get() + symbol)
     checkSymbolEqual()
     isPoint = False
-
-
-def minus():
-    global isPoint
-    symbol = checkSymbol()
-    if symbol is None:
-        ans.set("")
-    elif symbol == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 3] + " - ")
-    else:
-        ans.set(ans.get() + " - ")
-    checkSymbolEqual()
-    isPoint = False
-
-
-def time():
-    global isPoint
-    symbol = checkSymbol()
-    if symbol is None:
-        ans.set("")
-    elif symbol == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 3] + " * ")
-    else:
-        ans.set(ans.get() + " * ")
-    checkSymbolEqual()
-    isPoint = False
-
-
-def div():
-    global isPoint
-    symbol = checkSymbol()
-    if symbol is None:
-        ans.set("")
-    elif symbol == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 3] + " / ")
-    else:
-        ans.set(ans.get() + " / ")
-    checkSymbolEqual()
-    isPoint = False
-
+    
 
 def equal():
     global isEqual
@@ -266,19 +226,19 @@ if __name__ == '__main__':
     # Button
     btn_clear = tk.Button(win, text='C', font=f, command=clear, bg='gray', fg='white')
     btn_back = tk.Button(win, text='<-', font=f, command=back, bg='gray', fg='white')
-    btn_div = tk.Button(win, text='/', font=f, command=div, bg='gray', fg='white')
+    btn_div = tk.Button(win, text='/', font=f, command=lambda : symbol(' / '), bg='gray', fg='white')
     btn_7 = tk.Button(win, text='7', font=f, command=lambda : number('7'), bg='black', fg='white')
     btn_8 = tk.Button(win, text='8', font=f, command=lambda : number('8'), bg='black', fg='white')
     btn_9 = tk.Button(win, text='9', font=f, command=lambda : number('9'), bg='black', fg='white')
-    btn_time = tk.Button(win, text='*', font=f, command=time, bg='gray', fg='white')
+    btn_time = tk.Button(win, text='*', font=f, command=lambda : symbol(' * '), bg='gray', fg='white')
     btn_4 = tk.Button(win, text='4', font=f, command=lambda : number('4'), bg='black', fg='white')
     btn_5 = tk.Button(win, text='5', font=f, command=lambda : number('5'), bg='black', fg='white')
     btn_6 = tk.Button(win, text='6', font=f, command=lambda : number('6'), bg='black', fg='white')
-    btn_minus = tk.Button(win, text='-', font=f, command=minus, bg='gray', fg='white')
+    btn_minus = tk.Button(win, text='-', font=f, command=lambda : symbol(' - '), bg='gray', fg='white')
     btn_1 = tk.Button(win, text='1', font=f, command=lambda : number('1'), bg='black', fg='white')
     btn_2 = tk.Button(win, text='2', font=f, command=lambda : number('2'), bg='black', fg='white')
     btn_3 = tk.Button(win, text='3', font=f, command=lambda : number('3'), bg='black', fg='white')
-    btn_add = tk.Button(win, text='+', font=f, command=add, bg='gray', fg='white')
+    btn_add = tk.Button(win, text='+', font=f, command=lambda : symbol(' + '), bg='gray', fg='white')
     btn_0 = tk.Button(win, text='0', font=f, command=m0, bg='black', fg='white')
     btn_point = tk.Button(win, text='.', font=f, command=point, bg='black', fg='white')
     btn_equ = tk.Button(win, text='=', font=f, command=equal, bg='gray', fg='white')
