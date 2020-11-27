@@ -66,6 +66,18 @@ def checkZero():
     return checkagain(a)
 
 
+def number(num):
+    checkEqual()
+    i = checkZero()
+    if i is True:
+        ans.set(ans.get() + num)
+        return
+    elif i == 'replace':
+        ans.set(ans.get()[:len(ans.get()) - 1] + num)
+        return
+    ans.set(ans.get() + num)
+    
+
 def m0():
     checkEqual()
     if len(ans.get()) == 0:
@@ -92,115 +104,6 @@ def m0():
     if m0_1(a) is None:
         return
     ans.set(ans.get()[:i + 1] + m0_1(a))
-
-
-def m1():
-    checkEqual()
-    i = checkZero()
-    if i is True:
-        ans.set(ans.get() + "1")
-        return
-    elif i == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 1] + "1")
-        return
-    ans.set(ans.get() + "1")
-
-
-def m2():
-    checkEqual()
-    i = checkZero()
-    if i is True:
-        ans.set(ans.get() + "2")
-        return
-    elif i == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 1] + "2")
-        return
-    ans.set(ans.get() + "1")
-
-
-def m3():
-    checkEqual()
-    i = checkZero()
-    if i is True:
-        ans.set(ans.get() + "3")
-        return
-    elif i == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 1] + "3")
-        return
-    ans.set(ans.get() + "3")
-
-
-def m4():
-    checkEqual()
-    i = checkZero()
-    if i is True:
-        ans.set(ans.get() + "4")
-        return
-    elif i == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 1] + "4")
-        return
-    ans.set(ans.get() + "4")
-
-
-def m5():
-    checkEqual()
-    i = checkZero()
-    if i is True:
-        ans.set(ans.get() + "5")
-        return
-    elif i == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 1] + "5")
-        return
-    ans.set(ans.get() + "5")
-
-
-def m6():
-    checkEqual()
-    i = checkZero()
-    if i is True:
-        ans.set(ans.get() + "6")
-        return
-    elif i == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 1] + "6")
-        return
-    ans.set(ans.get() + "6")
-
-
-def m7():
-    checkEqual()
-    i = checkZero()
-    if i is True:
-        ans.set(ans.get() + "7")
-        return
-    elif i == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 1] + "7")
-        return
-    ans.set(ans.get() + "7")
-
-
-def m8():
-    checkEqual()
-    i = checkZero()
-    if i is True:
-        ans.set(ans.get() + "8")
-        return
-    elif i == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 1] + "8")
-        return
-    ans.set(ans.get() + "8")
-
-
-def m9():
-    checkEqual()
-    i = checkZero()
-    if i is True:
-        ans.set(ans.get() + "9")
-        return
-    elif i == 'replace':
-        ans.set(ans.get()[:len(ans.get()) - 1] + "9")
-        return
-    ans.set(ans.get() + "9")
-
 
 # ===================================symbol=====================================
 
@@ -364,17 +267,17 @@ if __name__ == '__main__':
     btn_clear = tk.Button(win, text='C', font=f, command=clear, bg='gray', fg='white')
     btn_back = tk.Button(win, text='<-', font=f, command=back, bg='gray', fg='white')
     btn_div = tk.Button(win, text='/', font=f, command=div, bg='gray', fg='white')
-    btn_7 = tk.Button(win, text='7', font=f, command=m7, bg='black', fg='white')
-    btn_8 = tk.Button(win, text='8', font=f, command=m8, bg='black', fg='white')
-    btn_9 = tk.Button(win, text='9', font=f, command=m9, bg='black', fg='white')
+    btn_7 = tk.Button(win, text='7', font=f, command=lambda : number('7'), bg='black', fg='white')
+    btn_8 = tk.Button(win, text='8', font=f, command=lambda : number('8'), bg='black', fg='white')
+    btn_9 = tk.Button(win, text='9', font=f, command=lambda : number('9'), bg='black', fg='white')
     btn_time = tk.Button(win, text='*', font=f, command=time, bg='gray', fg='white')
-    btn_4 = tk.Button(win, text='4', font=f, command=m4, bg='black', fg='white')
-    btn_5 = tk.Button(win, text='5', font=f, command=m5, bg='black', fg='white')
-    btn_6 = tk.Button(win, text='6', font=f, command=m6, bg='black', fg='white')
+    btn_4 = tk.Button(win, text='4', font=f, command=lambda : number('4'), bg='black', fg='white')
+    btn_5 = tk.Button(win, text='5', font=f, command=lambda : number('5'), bg='black', fg='white')
+    btn_6 = tk.Button(win, text='6', font=f, command=lambda : number('6'), bg='black', fg='white')
     btn_minus = tk.Button(win, text='-', font=f, command=minus, bg='gray', fg='white')
-    btn_1 = tk.Button(win, text='1', font=f, command=m1, bg='black', fg='white')
-    btn_2 = tk.Button(win, text='2', font=f, command=m2, bg='black', fg='white')
-    btn_3 = tk.Button(win, text='3', font=f, command=m3, bg='black', fg='white')
+    btn_1 = tk.Button(win, text='1', font=f, command=lambda : number('1'), bg='black', fg='white')
+    btn_2 = tk.Button(win, text='2', font=f, command=lambda : number('2'), bg='black', fg='white')
+    btn_3 = tk.Button(win, text='3', font=f, command=lambda : number('3'), bg='black', fg='white')
     btn_add = tk.Button(win, text='+', font=f, command=add, bg='gray', fg='white')
     btn_0 = tk.Button(win, text='0', font=f, command=m0, bg='black', fg='white')
     btn_point = tk.Button(win, text='.', font=f, command=point, bg='black', fg='white')
